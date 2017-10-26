@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body ng-app="nextGenApp">
+
+    <!-- All Views Go Here -->
+    <div class="partial-wrapper" ui-view></div>
+
+    
+    
+    <!-- AngularJS -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAN4KFhFndqXLWU64YEo6-f6ZA_gB2JFa8",
+        authDomain: "pivot-cd269.firebaseapp.com",
+        databaseURL: "https://pivot-cd269.firebaseio.com",
+        projectId: "pivot-cd269",
+        storageBucket: "pivot-cd269.appspot.com",
+        messagingSenderId: "547413306805"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <!-- Firebase END -->
+
+
+
+    <!-- Angular Routing -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <script src="/js/router.js"></script>
+
+    <script src="/js/angular-resource.js"></script>
+    
+    <!-- Controllers -->
+    <script src="/js/homeController.js"></script>
+    <script src="/js/dashboardController.js"></script>
+
+    <!-- Local Storage -->
+    <script src="js/localStorage.js"></script>
+
+    
+    
+</body>
+
+</html>

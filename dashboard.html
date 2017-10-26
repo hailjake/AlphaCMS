@@ -1,0 +1,36 @@
+<nav class="navbar navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" ui-sref="home">
+        <img src="/imgs/alphaLogo.png" width="30" height="30" class="d-inline-block align-top" alt=""> AlphaCMS
+    </a>
+    
+    <button type="button" class="btn btn-link logout-btn">Logout</button>
+</nav>
+
+<div class="container-fluid dashboard-wrapper">
+
+    <div class="row panel-container">
+        <div class="col-3 user-side-panel">
+
+            <div class="user-image" style="background-image: url('{{firebaseUser.photoURL}}') ;"></div>
+            <p><strong>{{firebaseUser.displayName}}</strong></p>
+            
+            <button type="button" class="btn btn-dark btn-block">View Site</button>
+            
+        </div>
+        <div class="col-9 content-editor">
+            <h2>Content Editor</h2>
+            
+            <p>Header Text</p>
+            <input type="text" class="form-control" placeholder="text goes here">
+            
+            <p>Header Sub Text</p>
+            <input type="text" class="form-control" placeholder="text goes here">
+            
+            
+            <button type="button" class="btn btn-info">Update Site Content</button>
+
+
+        </div>
+    </div>
+</div>
+<!--<pre>{{ firebaseUser | json}}</pre>-->

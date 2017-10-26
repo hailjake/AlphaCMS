@@ -1,0 +1,17 @@
+<nav class="navbar navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" ui-sref="dashboard">
+        <img src="/imgs/alphaLogo.png" width="30" height="30" class="d-inline-block align-top" alt=""> AlphaCMS
+    </a>
+</nav>
+
+<div class="container-fluid sign-in-wrapper">
+
+    <div class="signup-block">
+        <button type="button" class="btn btn-dark login-btn" ng-if="!firebaseUser" ng-click="signIn()">Sign In With Google</button>
+
+        <p ng-if="error">Error: <strong>{{ error }}</strong></p>
+            
+
+    </div>
+    
+</div>
