@@ -19,10 +19,7 @@
         </div>
         <div class="col-9 content-editor">
             <h2>Content Editor</h2>
-            
-            <!--{{database | json}}-->
-            
-            
+                        
             <p>Header Text</p>
             <input type="text" class="form-control" placeholder="text goes here" ng-model="database.HeaderTxt">
             
@@ -30,10 +27,11 @@
             <input type="text" class="form-control" placeholder="text goes here"  ng-model="database.SubHeaderTxt">
             
             
-            <button type="button" class="btn btn-info">Update Site Content</button>
+            <button type="button" class="btn btn-info" ng-click="updateData()">Update Site Content</button>
 
 
         </div>
     </div>
 </div>
+<!--{{database | json}}-->
 <!--<pre>{{ firebaseUser | json}}</pre>-->

@@ -1,23 +1,21 @@
-nextGenApp.controller('homeController', function($scope, $firebaseAuth, $state) {
+nextGenApp.controller('homeController', function ($scope, $firebaseAuth, $state) {
 
     var auth = $firebaseAuth();
 
-    $scope.signIn = function() {
-      $scope.firebaseUser = null;
-      $scope.error = null;
+    $scope.signIn = function () {
+        $scope.firebaseUser = null;
+        $scope.error = null;
 
-      auth.$signInWithPopup("google").then(function(firebaseUser) {
-        $scope.firebaseUser = firebaseUser;
-                     $state.go('dashboard');
+        auth.$signInWithPopup("google").then(function (firebaseUser) {
+            $scope.firebaseUser = firebaseUser;
+            $state.go('dashboard');
 
-      }).catch(function(error) {
-        $scope.error = error;
-      });
-        
-     
-       
+        }).catch(function (error) {
+            $scope.error = error;
+        });
+
+
+
     };
-    
+
 });
-
-
