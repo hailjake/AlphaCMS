@@ -2,7 +2,7 @@
     <a class="navbar-brand" ui-sref="home">
         <img src="/imgs/alphaLogo.png" width="30" height="30" class="d-inline-block align-top" alt=""> AlphaCMS
     </a>
-    
+
     <button type="button" class="btn btn-link logout-btn">Logout</button>
 </nav>
 
@@ -13,25 +13,21 @@
 
             <div class="user-image" style="background-image: url('{{firebaseUser.photoURL}}') ;"></div>
             <p><strong>{{firebaseUser.displayName}}</strong></p>
-            
+
             <button type="button" class="btn btn-dark btn-block">View Site</button>
-            
+
+
+            <button type="button" class="btn btn-outline-info btn-sm btn-block" ui-sref="dashboard.main">Home</button>
+            <button type="button" class="btn btn-outline-info btn-sm btn-block" ui-sref="dashboard.about">About</button>
+            <button type="button" class="btn btn-outline-info btn-sm btn-block" ui-sref="dashboard.services">Services</button>
+            <button type="button" class="btn btn-outline-info btn-sm btn-block" ui-sref="dashboard.blog">Blog</button>
+            <button type="button" class="btn btn-outline-info btn-sm btn-block" ui-sref="dashboard.contact">Contact</button>
+
+
         </div>
         <div class="col-9 content-editor">
-            <h2>Content Editor</h2>
-                        
-            <p>Header Text</p>
-            <input type="text" class="form-control" placeholder="text goes here" ng-model="database.HeaderTxt">
-            
-            <p>Header Sub Text</p>
-            <input type="text" class="form-control" placeholder="text goes here"  ng-model="database.SubHeaderTxt">
-            
-            
-            <button type="button" class="btn btn-info" ng-click="updateData()">Update Site Content</button>
 
-            <div class="loading-wrapper" ng-if="isLoading">
-                <div class="dots-loader"></div>
-            </div>
+            <div ui-view></div>
 
 
         </div>

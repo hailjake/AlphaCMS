@@ -1,0 +1,14 @@
+<h2>Content Editor</h2>
+
+<p>Header Text</p>
+<input type="text" class="form-control" placeholder="text goes here" ng-model="database.HeaderTxt">
+
+<p>Header Sub Text</p>
+<input type="text" class="form-control" placeholder="text goes here" ng-model="database.SubHeaderTxt">
+
+
+<button type="button" class="btn btn-info" ng-click="updateData()">Update Site Content</button>
+
+<div class="loading-wrapper" ng-if="isLoading">
+    <div class="dots-loader"></div>
+</div>
