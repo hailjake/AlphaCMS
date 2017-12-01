@@ -18,7 +18,7 @@ nextGenApp.run(["$rootScope", "$state", function ($rootScope, $state) {
         // We can catch the error thrown when the $requireSignIn promise is rejected
         // and redirect the user back to the home page
         if (error === "AUTH_REQUIRED") {
-            $state.go("/");
+            $state.go("home");
         }
     });
  }]);
