@@ -45,6 +45,9 @@ body,
   background: #e7e8ea;
   height: 100%;
   padding: 50px 15px;
+  -webkit-box-shadow: 10px 3px 32px -19px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 3px 32px -19px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 3px 32px -19px rgba(0, 0, 0, 0.75);
 }
 .dashboard-wrapper .user-side-panel .user-image {
   width: 150px;
@@ -58,12 +61,22 @@ body,
   text-align: center;
   padding-top: 10px;
 }
+.dashboard-wrapper .content-editor {
+  padding: 0;
+}
 .dashboard-wrapper .content-editor h2 {
-  padding: 25px 0;
+  padding: 25px 15px;
+  background: #343a4017;
 }
 .dashboard-wrapper .content-editor p {
   margin-top: 10px;
   margin-bottom: 0;
+}
+.dashboard-wrapper .content-editor .form-control {
+  border-radius: 0;
+}
+.dashboard-wrapper .content-editor .home-editor-wrap {
+  padding: 0 15px;
 }
 .dashboard-wrapper .content-editor .btn-info {
   margin-top: 25px;

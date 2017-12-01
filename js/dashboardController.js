@@ -1,18 +1,18 @@
 nextGenApp.controller("dashboardController", ["$scope", "$state", "Auth", "$firebaseArray",
- function ($scope, $state, Auth, $firebase, $firebaseAuth, $firebaseArray) {
+ function ($scope, $state, Auth, $firebase, $firebaseAuth, $firebaseArray, $timeout) {
 
         // TODO: create helper library to wrap datastore calls
-     
-             // logout
+
+        // logout
         $scope.logout = function () {
-            firebase.auth().signOut().then(function() {
+            firebase.auth().signOut().then(function () {
                 $state.go('home');
-            }, function(error) {
-              console.error('Sign Out Error', error);
+            }, function (error) {
+                console.error('Sign Out Error', error);
             });
         };
-     
-     
+
+
         // Auth 
         $scope.auth = Auth;
         // any time auth state changes, add the user data to scope
@@ -25,7 +25,7 @@ nextGenApp.controller("dashboardController", ["$scope", "$state", "Auth", "$fire
         $scope.database = {};
         $scope.database.HeaderTxt = "";
         $scope.database.SubHeaderTxt = "";
-     
+
         // Get Data
         db.collection("content").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
@@ -35,7 +35,9 @@ nextGenApp.controller("dashboardController", ["$scope", "$state", "Auth", "$fire
                 $scope.$apply()
             });
         });
+     
         $scope.isLoading = false;
+        $scope.updateSuccess = false;
 
         // Update Data
         $scope.updateData = function () {
@@ -47,6 +49,11 @@ nextGenApp.controller("dashboardController", ["$scope", "$state", "Auth", "$fire
                 })
                 .then(function () {
                     $scope.isLoading = false;
+                    $scope.updateSuccess = true;
+                    setTimeout(function () {
+                        $scope.updateSuccess = false;
+                        $scope.$apply();
+                    }, 5000);
                     $scope.$apply();
                 })
                 .catch(function (error) {
