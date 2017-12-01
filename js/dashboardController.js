@@ -1,7 +1,17 @@
-nextGenApp.controller("dashboardController", ["$scope", "Auth", "$firebaseArray",
- function ($scope, Auth, $firebase, $firebaseAuth, $firebaseArray) {
+nextGenApp.controller("dashboardController", ["$scope", "$state", "Auth", "$firebaseArray",
+ function ($scope, $state, Auth, $firebase, $firebaseAuth, $firebaseArray) {
 
         // TODO: create helper library to wrap datastore calls
+     
+             // logout
+        $scope.logout = function () {
+            firebase.auth().signOut().then(function() {
+                $state.go('home');
+            }, function(error) {
+              console.error('Sign Out Error', error);
+            });
+        };
+     
      
         // Auth 
         $scope.auth = Auth;

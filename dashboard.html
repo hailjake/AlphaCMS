@@ -3,7 +3,7 @@
         <img src="/imgs/alphaLogo.png" width="30" height="30" class="d-inline-block align-top" alt=""> AlphaCMS
     </a>
 
-    <button type="button" class="btn btn-link logout-btn">Logout</button>
+    <button type="button" class="btn btn-link logout-btn" ng-click="logout()">Logout</button>
 </nav>
 
 <div class="container-fluid dashboard-wrapper">
@@ -13,6 +13,7 @@
 
             <div class="user-image" style="background-image: url('{{firebaseUser.photoURL}}') ;"></div>
             <p><strong>{{firebaseUser.displayName}}</strong></p>
+            <p><strong>{{firebaseUser.uid}}</strong></p>
 
             <button type="button" class="btn btn-dark btn-block">View Site</button>
 
