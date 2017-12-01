@@ -108,6 +108,11 @@ body,
   padding: 25px 15px;
   background: #343a4017;
 }
+@media only screen and (max-width: 575px) {
+  .dashboard-wrapper .content-editor h2 {
+    font-size: 16px;
+  }
+}
 .dashboard-wrapper .content-editor p {
   margin-top: 10px;
   margin-bottom: 0;
