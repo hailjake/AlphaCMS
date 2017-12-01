@@ -14,11 +14,22 @@
             <div class="user-image" style="background-image: url('{{firebaseUser.photoURL}}') ;"></div>
             <p><strong>{{firebaseUser.displayName}}</strong></p>
 
-            <button type="button" class="btn btn-outline-info btn-sm btn-block" ui-sref="dashboard.main">Home</button>
-            <button type="button" class="btn btn-outline-info btn-sm btn-block" ui-sref="dashboard.about">About</button>
-            <button type="button" class="btn btn-outline-info btn-sm btn-block" ui-sref="dashboard.services">Services</button>
-            <button type="button" class="btn btn-outline-info btn-sm btn-block" ui-sref="dashboard.blog">Blog</button>
-            <button type="button" class="btn btn-outline-info btn-sm btn-block" ui-sref="dashboard.contact">Contact</button>
+            <div class="desktop-nav">
+                <button type="button" class="btn btn-outline-info btn-sm btn-block" ui-sref="dashboard.main">Home</button>
+                <button type="button" class="btn btn-outline-info btn-sm btn-block" ui-sref="dashboard.about">About</button>
+                <button type="button" class="btn btn-outline-info btn-sm btn-block" ui-sref="dashboard.services">Services</button>
+                <button type="button" class="btn btn-outline-info btn-sm btn-block" ui-sref="dashboard.blog">Blog</button>
+                <button type="button" class="btn btn-outline-info btn-sm btn-block" ui-sref="dashboard.contact">Contact</button>
+            </div>
+            
+            <div class="mobile-nav">
+                <button type="button" class="btn btn-outline-info btn-sm btn-block" ui-sref="dashboard.main"><i class="material-icons">home</i></button>
+                <button type="button" class="btn btn-outline-info btn-sm btn-block" ui-sref="dashboard.about"><i class="material-icons">account_box</i></button>
+                <button type="button" class="btn btn-outline-info btn-sm btn-block" ui-sref="dashboard.services"><i class="material-icons">build</i></button>
+                <button type="button" class="btn btn-outline-info btn-sm btn-block" ui-sref="dashboard.blog"><i class="material-icons">developer_board</i></button>
+                <button type="button" class="btn btn-outline-info btn-sm btn-block" ui-sref="dashboard.contact"><i class="material-icons">question_answer</i></button>
+            </div>
+ 
 
 
         </div>

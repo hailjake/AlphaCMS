@@ -53,9 +53,9 @@ body,
         -webkit-box-shadow: 10px 3px 32px -19px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 10px 3px 32px -19px rgba(0, 0, 0, 0.75);
         box-shadow: 10px 3px 32px -19px rgba(0, 0, 0, 0.75);
-           @media only screen and (max-width: 550px) {
-                min-width: 80px;
-            }
+        @media only screen and (max-width: 550px) {
+            min-width: 80px;
+        }
         .user-image {
             width: 150px;
             height: 150px;
@@ -63,23 +63,39 @@ body,
             background-repeat: no-repeat;
             background-size: cover;
             margin: auto;
-            @media only screen and (max-width: 550px) {
+            @media only screen and (max-width: 575px) {
                 width: 50px;
                 height: 50px;
-                margin: inherit;
+                margin-bottom: 10px;
             }
         }
         p {
             text-align: center;
             padding-top: 10px;
-               @media only screen and (max-width: 550px) {
+            @media only screen and (max-width: 575px) {
                 display: none;
+            }
+        }
+        .desktop-nav {
+            @media only screen and (max-width: 575px) {
+                display: none;
+            }
+        }
+        .mobile-nav {
+            display: none;
+            @media only screen and (max-width: 575px) {
+                display: block;
+            }
+            i{
+                font-size: 18px;
+                position: relative;
+                top: 3px;
             }
         }
     }
     .content-editor {
         padding: 0;
-         @media only screen and (max-width: 550px) {
+        @media only screen and (max-width: 575px) {
             max-width: calc(~"100% - 80px");
         }
         h2 {
