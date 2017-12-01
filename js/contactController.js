@@ -1,14 +1,13 @@
-nextGenApp.controller("mainController", ["$scope", "$state", "Auth", "$firebaseArray",
+nextGenApp.controller("contactController", ["$scope", "$state", "Auth", "$firebaseArray",
  function ($scope, $state, Auth, $firebase, $firebaseAuth, $firebaseArray, $timeout) {
-
+     
     // Firestore
     var db = firebase.firestore();
     $scope.database = {};
-    $scope.database.HeaderTxt = "";
-    $scope.database.SubHeaderTxt = "";
+    $scope.database.test = "";
 
     // Get Data
-    db.collection("homepage").get().then((querySnapshot) => {
+    db.collection("contact").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             console.log(`${doc.id} => ${doc.data()}`);
 
@@ -22,11 +21,10 @@ nextGenApp.controller("mainController", ["$scope", "$state", "Auth", "$firebaseA
 
     // Update Data
     $scope.updateData = function () {
-        var HeaderTxtRef = db.collection("homepage").doc("Zn5DwXDTwsDPJNoilP1q");
+        var HeaderTxtRef = db.collection("contact").doc("m8CC9sapnf6711nWojgq");
         $scope.isLoading = true;
         return HeaderTxtRef.update({
-                HeaderTxt: $scope.database.HeaderTxt,
-                SubHeaderTxt: $scope.database.SubHeaderTxt
+                ContactEmail: $scope.database.ContactEmail
             })
             .then(function () {
                 $scope.isLoading = false;
@@ -43,5 +41,5 @@ nextGenApp.controller("mainController", ["$scope", "$state", "Auth", "$firebaseA
                 $scope.$apply();
             });
     };
-       
+
  }]);

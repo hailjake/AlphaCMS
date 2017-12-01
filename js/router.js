@@ -69,17 +69,17 @@ nextGenApp.config(function ($stateProvider, $urlRouterProvider) {
         .state('dashboard.contact', {
             url: '/contact',
             templateUrl: 'partials/dashboard.contact.html',
-            controller: 'dashboardController'
+            controller: 'contactController'
         })
         .state('dashboard.about', {
             url: '/about',
             templateUrl: 'partials/dashboard.about.html',
-            controller: 'dashboardController'
+            controller: 'aboutController'
         })
         .state('dashboard.services', {
             url: '/services',
             templateUrl: 'partials/dashboard.services.html',
-            controller: 'dashboardController'
+            controller: 'servicesController'
         })
         .state('dashboard.blog', {
             url: '/blog',

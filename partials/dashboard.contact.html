@@ -1,1 +1,19 @@
 <h2>Contact Content Editor</h2>
+
+<div class="home-editor-wrap">
+
+    <div class="alert alert-success" role="alert" ng-if="updateSuccess">
+      Content Successfully Updated
+    </div>
+
+    <p>Contact Email</p>
+    <input type="text" class="form-control" placeholder="text goes here" ng-model="database.ContactEmail">
+
+
+    <button type="button" class="btn btn-info" ng-click="updateData()">Update Site Content</button>
+
+    <div class="loading-wrapper" ng-if="isLoading">
+        <div class="dots-loader"></div>
+    </div>
+
+</div>

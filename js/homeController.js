@@ -14,8 +14,6 @@ nextGenApp.controller('homeController', function ($scope, $firebaseAuth, $state)
             $scope.error = error;
         });
 
-
-
     };
 
 });
