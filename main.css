@@ -49,6 +49,11 @@ body,
   -moz-box-shadow: 10px 3px 32px -19px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 3px 32px -19px rgba(0, 0, 0, 0.75);
 }
+@media only screen and (max-width: 550px) {
+  .dashboard-wrapper .user-side-panel {
+    min-width: 80px;
+  }
+}
 .dashboard-wrapper .user-side-panel .user-image {
   width: 150px;
   height: 150px;
@@ -57,12 +62,29 @@ body,
   background-size: cover;
   margin: auto;
 }
+@media only screen and (max-width: 550px) {
+  .dashboard-wrapper .user-side-panel .user-image {
+    width: 50px;
+    height: 50px;
+    margin: inherit;
+  }
+}
 .dashboard-wrapper .user-side-panel p {
   text-align: center;
   padding-top: 10px;
 }
+@media only screen and (max-width: 550px) {
+  .dashboard-wrapper .user-side-panel p {
+    display: none;
+  }
+}
 .dashboard-wrapper .content-editor {
   padding: 0;
+}
+@media only screen and (max-width: 550px) {
+  .dashboard-wrapper .content-editor {
+    max-width: calc(100% - 80px);
+  }
 }
 .dashboard-wrapper .content-editor h2 {
   padding: 25px 15px;

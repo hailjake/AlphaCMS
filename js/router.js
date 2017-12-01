@@ -53,8 +53,8 @@ nextGenApp.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('dashboard.main', {
             url: '/main',
-            templateUrl: 'dashboard.main.html',
-            controller: 'dashboardController',
+            templateUrl: 'partials/dashboard.main.html',
+            controller: 'mainController',
            resolve: {
                 // controller will not be loaded until $requireSignIn resolves
                  // Auth refers to our $firebaseAuth wrapper in the factory below
@@ -68,23 +68,23 @@ nextGenApp.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('dashboard.contact', {
             url: '/contact',
-            templateUrl: 'dashboard.contact.html',
+            templateUrl: 'partials/dashboard.contact.html',
             controller: 'dashboardController'
         })
         .state('dashboard.about', {
             url: '/about',
-            templateUrl: 'dashboard.about.html',
+            templateUrl: 'partials/dashboard.about.html',
             controller: 'dashboardController'
         })
         .state('dashboard.services', {
             url: '/services',
-            templateUrl: 'dashboard.services.html',
+            templateUrl: 'partials/dashboard.services.html',
             controller: 'dashboardController'
         })
         .state('dashboard.blog', {
             url: '/blog',
-            templateUrl: 'dashboard.blog.html',
-            controller: 'dashboardController'
+            templateUrl: 'partials/dashboard.blog.html',
+            controller: 'blogController'
         });
 
 });

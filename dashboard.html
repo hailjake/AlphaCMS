@@ -9,13 +9,10 @@
 <div class="container-fluid dashboard-wrapper">
 
     <div class="row panel-container">
-        <div class="col-3 user-side-panel">
+        <div class="col-2 col-sm-4 col-md-3 col-xl-2 user-side-panel">
 
             <div class="user-image" style="background-image: url('{{firebaseUser.photoURL}}') ;"></div>
             <p><strong>{{firebaseUser.displayName}}</strong></p>
-
-            <button type="button" class="btn btn-dark btn-block">View Site</button>
-
 
             <button type="button" class="btn btn-outline-info btn-sm btn-block" ui-sref="dashboard.main">Home</button>
             <button type="button" class="btn btn-outline-info btn-sm btn-block" ui-sref="dashboard.about">About</button>
@@ -25,7 +22,7 @@
 
 
         </div>
-        <div class="col-9 content-editor">
+        <div class="col-10 col-sm-8 col-md-9 col-xl-10 content-editor">
 
             <div ui-view></div>
 
