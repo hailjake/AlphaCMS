@@ -9,8 +9,6 @@ nextGenApp.controller("contactController", ["$scope", "$state", "Auth", "$fireba
     // Get Data
     db.collection("contact").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            console.log(`${doc.id} => ${doc.data()}`);
-
             $scope.database = doc.data();
             $scope.$apply()
         });
