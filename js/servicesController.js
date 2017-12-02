@@ -7,7 +7,7 @@ nextGenApp.controller("servicesController", ["$scope", "$state", "Auth", "$fireb
         $scope.database.test = "";
 
         // Get Data
-        db.collection("about").get().then((querySnapshot) => {
+        db.collection("services").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 console.log(`${doc.id} => ${doc.data()}`);
 
@@ -21,10 +21,10 @@ nextGenApp.controller("servicesController", ["$scope", "$state", "Auth", "$fireb
 
         // Update Data
         $scope.updateData = function () {
-            var HeaderTxtRef = db.collection("about").doc("nzrccvqsJigkR0SbUkiV");
+            var HeaderTxtRef = db.collection("services").doc("icL113Wn3jyqi1dCLq0J");
             $scope.isLoading = true;
             return HeaderTxtRef.update({
-                    ContactEmail: $scope.database.test
+                    test: $scope.database.test
                 })
                 .then(function () {
                     $scope.isLoading = false;

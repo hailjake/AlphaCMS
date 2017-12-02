@@ -24,7 +24,7 @@ nextGenApp.controller("aboutController", ["$scope", "$state", "Auth", "$firebase
          var HeaderTxtRef = db.collection("about").doc("nzrccvqsJigkR0SbUkiV");
          $scope.isLoading = true;
          return HeaderTxtRef.update({
-                 ContactEmail: $scope.database.test
+                 test: $scope.database.test
              })
              .then(function () {
                  $scope.isLoading = false;
