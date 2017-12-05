@@ -4,3 +4,24 @@
         <i class="material-icons">open_in_new</i>
     </a>
 </h2>
+
+
+<div class="home-editor-wrap">
+
+    <div class="alert alert-success" role="alert" ng-if="updateSuccess">
+      Content Successfully Updated
+    </div>
+
+    <p>Blog Title</p>
+    <input type="text" class="form-control" placeholder="text goes here" ng-model="database.Title">
+    <textarea type="text" class="form-control" placeholder="text goes here" ng-model="database.Post"></textarea>
+
+    <button type="button" class="btn btn-info" ng-click="updateData()">Post Blog</button>
+
+    <div class="loading-wrapper" ng-if="isLoading">
+        <div class="dots-loader"></div>
+    </div>
+    
+    
+    {{database | json}}
+</div>

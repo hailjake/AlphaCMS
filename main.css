@@ -113,6 +113,16 @@ body,
     font-size: 16px;
   }
 }
+.dashboard-wrapper .content-editor h2 .badge {
+  padding: 2px 4px;
+  background-color: transparent;
+}
+.dashboard-wrapper .content-editor h2 .badge i {
+  font-size: 18px;
+  position: relative;
+  top: -1px;
+  color: #343a40;
+}
 .dashboard-wrapper .content-editor p {
   margin-top: 10px;
   margin-bottom: 0;
