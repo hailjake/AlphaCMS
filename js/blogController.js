@@ -1,33 +1,56 @@
 nextGenApp.controller("blogController", ["$scope", "$state", "Auth", "$firebaseArray",
  function ($scope, $state, Auth, $firebase, $firebaseAuth, $firebaseArray, $timeout) {
-        console.log('blog loaded');
         // Firestore
         var db = firebase.firestore();
         $scope.database = [];
-        $scope.database.Title = "";
-        $scope.database.Post = "";
-
-     
+        $scope.Title = "";
+        $scope.Post = "";
+        $scope.isPosted = true;
+        // Auth 
+        $scope.auth = Auth;
+        // any time auth state changes, add the user data to scope
+        $scope.auth.$onAuthStateChanged(function (firebaseUser) {
+            $scope.firebaseUser = firebaseUser;
+        });
         // Get Data
         db.collection("blog").get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                $scope.database = doc.data();
-                console.log($scope.database);
+                $scope.database = querySnapshot.docs.map((doc)=> doc.data());
+                
                 $scope.$apply();
-            });
         });
-
-     
-     
+                $scope.isLoading = false;
 
         // Update Data
         $scope.updateData = function () {
             db.collection("blog").add({
-                 Title: "31eee",
-                Post: "3eee",
-                UserPosted: "jeeed"
-        
+                Title: $scope.Title,
+                Post: $scope.Post,
+                UserPosted: "John Dough",
+                Date: Date(),
+                isPosted: $scope.isPosted
+            }).then(function () {
+                $scope.isLoading = false;
+                $scope.updateSuccess = true;
+                setTimeout(function () {
+                    $scope.updateSuccess = false;
+                    $scope.$apply();
+                }, 5000);
+                
+                
+            db.collection("blog").get().then((querySnapshot) => {
+                $scope.database = querySnapshot.docs.map((doc)=> doc.data());
+                
+                $scope.$apply();
+            
+        });
+                
+                $scope.$apply();
             })
+            .catch(function (error) {
+                console.error("Error updating document: ", error);
+                $scope.isLoading = false;
+                $scope.$apply();
+            });
         };
 
  }]);

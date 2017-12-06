@@ -133,6 +133,23 @@ body,
 .dashboard-wrapper .content-editor .home-editor-wrap {
   padding: 0 15px;
 }
+.dashboard-wrapper .content-editor .blog-editor-wrap {
+  padding: 0 15px 15px 15px;
+  margin-top: 10px;
+  overflow: auto;
+  border-bottom: 1px solid gray;
+}
+.dashboard-wrapper .content-editor .blog-editor-wrap textarea {
+  overflow: hidden;
+}
+.dashboard-wrapper .content-editor .post-wrapper {
+  padding: 15px;
+  height: 43vh;
+  overflow: auto;
+}
+.dashboard-wrapper .content-editor .post-wrapper .card {
+  margin-top: 5px;
+}
 .dashboard-wrapper .content-editor .btn-info {
   margin-top: 25px;
   float: right;

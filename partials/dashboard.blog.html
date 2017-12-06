@@ -6,22 +6,45 @@
 </h2>
 
 
-<div class="home-editor-wrap">
+<div class="blog-editor-wrap">
 
     <div class="alert alert-success" role="alert" ng-if="updateSuccess">
-      Content Successfully Updated
+        Content Successfully Updated
     </div>
-
+    <p><strong>Editing As: </strong>{{firebaseUser.displayName}}</p>
     <p>Blog Title</p>
-    <input type="text" class="form-control" placeholder="text goes here" ng-model="database.Title">
-    <textarea type="text" class="form-control" placeholder="text goes here" ng-model="database.Post"></textarea>
+    <input type="text" class="form-control" placeholder="text goes here" ng-model="Title">
+    <p>Blog Body</p>
+
+    <textarea type="text" class="form-control" placeholder="text goes here" ng-model="Post"></textarea>
 
     <button type="button" class="btn btn-info" ng-click="updateData()">Post Blog</button>
 
     <div class="loading-wrapper" ng-if="isLoading">
         <div class="dots-loader"></div>
     </div>
-    
-    
-    {{database | json}}
+
+
+
+</div>
+
+<div class="post-wrapper">
+<h3>Recent Posts</h3>
+    <div class="card" style="width: 100%;" ng-repeat="blog in database">
+        <div class="card-body">
+            <h4 class="card-title">{{blog.Title}}</h4>
+            <p class="card-text">{{blog.Post}}</p>
+            <p class="card-text">
+                <strong>Posted On:</strong>
+                {{blog.Date | date:'medium'}}
+            </p>
+            <p class="card-text">
+                <strong>Posted By: </strong>
+                {{blog.UserPosted}}
+            </p>
+
+
+        </div>
+    </div>
+
 </div>

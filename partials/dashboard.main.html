@@ -8,8 +8,21 @@
 <div class="home-editor-wrap">
 
     <div class="alert alert-success" role="alert" ng-if="updateSuccess">
-      Content Successfully Updated
+        Content Successfully Updated
     </div>
+
+    <h4>Layout</h4>
+<div class="btn-group">
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> List
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> 2 Tile
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> 4 Tile
+  </label>
+</div>
 
     <p>Header Text</p>
     <input type="text" class="form-control" placeholder="text goes here" ng-model="database.HeaderTxt">
@@ -24,4 +37,3 @@
     </div>
 
 </div>
-
