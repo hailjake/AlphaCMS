@@ -11,6 +11,7 @@ nextGenApp.controller("blogController", ["$scope", "$state", "Auth", "$firebaseA
         // any time auth state changes, add the user data to scope
         $scope.auth.$onAuthStateChanged(function (firebaseUser) {
             $scope.firebaseUser = firebaseUser;
+            $scope.displayName = firebaseUser.displayName;     
         });
         // Get Data
         db.collection("blog").get().then((querySnapshot) => {
@@ -25,7 +26,7 @@ nextGenApp.controller("blogController", ["$scope", "$state", "Auth", "$firebaseA
             db.collection("blog").add({
                 Title: $scope.Title,
                 Post: $scope.Post,
-                UserPosted: "John Dough",
+                UserPosted: $scope.displayName,
                 Date: Date(),
                 isPosted: $scope.isPosted
             }).then(function () {

@@ -37,6 +37,7 @@ body,
 .dashboard-wrapper {
   height: 100%;
   padding-top: 56px;
+  overflow: hidden;
 }
 .dashboard-wrapper .panel-container {
   height: 100%;
@@ -133,19 +134,23 @@ body,
 .dashboard-wrapper .content-editor .home-editor-wrap {
   padding: 0 15px;
 }
+.dashboard-wrapper .content-editor .home-editor-wrap .btn-group i {
+  position: relative;
+  top: 3.4px;
+}
 .dashboard-wrapper .content-editor .blog-editor-wrap {
-  padding: 0 15px 15px 15px;
+  padding: 0 15px 15px 35px;
   margin-top: 10px;
   overflow: auto;
-  border-bottom: 1px solid gray;
+  border-right: 1px solid gray;
 }
 .dashboard-wrapper .content-editor .blog-editor-wrap textarea {
   overflow: hidden;
+  height: 300px;
 }
 .dashboard-wrapper .content-editor .post-wrapper {
-  padding: 15px;
-  height: 43vh;
-  overflow: auto;
+  height: 76vh;
+  overflow-y: auto;
 }
 .dashboard-wrapper .content-editor .post-wrapper .card {
   margin-top: 5px;
